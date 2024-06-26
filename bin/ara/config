@@ -1,0 +1,24 @@
+#N - FIXE
+network.size 10
+random.seed 20
+simulation.endtime 100000
+
+protocol.transport UniformRandomTransport
+
+#gamma
+protocol.transport.mindelay 1
+protocol.transport.maxdelay 1
+
+protocol.applicative NaimiTrehelAlgo
+protocol.applicative.transport transport
+
+#alpha
+protocol.applicative.timeCS 50
+#beta
+protocol.applicative.timeBetweenCS 50
+
+control.endcontroler EndControl
+control.endcontroler.applicative applicative
+control.endcontroler.at -1
+control.endcontroler.FINAL
+
